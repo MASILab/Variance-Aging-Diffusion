@@ -74,7 +74,7 @@ for index,row in df_base.sort_values(by='Age').iterrows():
 ax.set_title('Age of Subject in Baseline Session and Follow-Up Sessions') #TODO
 ax.set_xlabel('Age (Year)')
 ax.set_ylabel('Subject')
-ax.set_xlim(left=20-5, right=105+5)
+ax.set_xlim(left=20, right=105)
 ax.set_ylim(bottom=0-5, top=1036+5)
 ax.set_yticks([])
 ax.legend(loc='lower right')

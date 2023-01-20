@@ -1,0 +1,87 @@
+---
+title: "lme_toy_example"
+author: "Chenyu Gao"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+https://neuranna.github.io/mixedmodels-fmri/building-your-first-mixed-model.html
+
+```{r, message=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(lme4)
+library(lmerTest)
+```
+
+```{r}
+data = read.csv("/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/part/EveType1-140-FA_std.csv", header=TRUE)
+print(str(data))
+
+summary(data)
+```
+
+```{r}
+data$Subject_ID = factor(data$Subject_ID)
+data$Session_ID = factor(data$Session_ID)
+data$Session = factor(data$Session)
+data$Sex = factor(data$Sex)
+data$DTI_ID = factor(data$DTI_ID)
+data$DTI_ID_Full = factor(data$DTI_ID_Full)
+
+print(str(data))
+```
+## Model with only the intercept
+the simplest linear model
+```{r}
+m.lin.noAge = lm(FA_std ~ 1, data = data)
+summary(m.lin.noAge)
+```
+
+## Model with 1 fixed effect
+age
+
+```{r}
+m.lin = lm(FA_std ~ 1 + Age, data = data)
+summary(m.lin)
+```
+```{r}
+lme4:::anova.merMod(m.lin.noAge, m.lin)
+```
+
+## Adding random intercepts
+Subject_ID
+```{r}
+m.ri1 = lmer(FA_std ~ 1 + Age + (1 | Subject_ID), data = data, REML = FALSE)
+summary(m.ri1)
+```
+```{r}
+anova(m.ri1, m.lin)
+```
+
+## Add sex as fixed effects
+```{r}
+m.ri1.wSex = lmer(FA_std ~ 1 + Sex + Age + (1 | Subject_ID), data = data, REML = FALSE)
+summary(m.ri1.wSex)
+
+```
+```{r}
+anova(m.ri1.wSex, m.ri1)
+```
+
+```{r}
+#TODO: consider scan and rescan
+```
+
+
+```{r}
+ggplot(data, aes(Age, FA_std, colour=factor(Sex))) + geom_point(size=0.2)
+```
+
+```{r}
+
+```

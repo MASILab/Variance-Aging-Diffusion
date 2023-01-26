@@ -53,7 +53,7 @@ for (col in names(brain_stats)){
       print("Error: DTI_ID!")
     }
   } else {
-  print("Error: measure type!")
+    print("Error: measure type!")
   }
   
   if (atlas == s_atlas & region_id == s_region_id & measure == s_measure) {

@@ -1,9 +1,10 @@
 library(tidyverse)
 library(lme4)
 library(lmerTest)
-
 library(readr)
 library(ggplot2)
+library(report)
+library(insight)
 
 # Read csv
 brain_stats <- read_csv("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/BLSA_Brain_stats_concat_20221110_delivery.csv")
@@ -82,10 +83,11 @@ for (sub in list_subject) {
 # New column: Interval, time since first visit
 df['Interval'] <- df['Age'] - df['Age_base']
 
+
 # Re-order and save
 df <- df[c("Subject_ID", "Sex", "Session", "DTI_ID", "Age", "Age_base", "Interval", "Motion", s_measure)]
-fn_save = sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/part/%s-%s-%s.csv", s_atlas, s_region_id, s_measure)
-write.csv(df, fn_save, row.names=FALSE, quote=FALSE)
+#fn_save = sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/part/%s-%s-%s.csv", s_atlas, s_region_id, s_measure)
+#write.csv(df, fn_save, row.names=FALSE, quote=FALSE)
 
 ################### LINEAR MIXED EFFECTS MODEL ###################
 # convert to factor class variables
@@ -97,9 +99,11 @@ df <- within(df, {
 
 ## Backward regression
 # Start with full model and do backward regression
-m <- lmer(FA_std ~ Age_base + Interval + Interval_sqr + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
+#m <- lmer(FA_std ~ Age_base + Interval + Interval_sqr + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
+m <- lmer(FA_std ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
 s <- step(m)
-print(s)
+final <- get_model(s)
+summary(final)
 
 # Manually
 # Manual selection by Likelihood ratio test
@@ -145,10 +149,9 @@ summary(m9.reml)
 df['Interval_sqr'] <- df['Interval']^2
 m10 <- lmer(FA_std ~ Age_base + Interval + Interval_sqr + Sex + DTI_ID + (1 + Interval | Subject_ID), data=df, REML=FALSE)
 anova(m9, m10)
-
 # Rethink: Interval_sqr is not necessary. Our goal is not only to fit the data well, but also to explain the coefficients
 
-library(report)
+# Use the report package to display the results
 report(m9.reml)
 report(sessionInfo())
 report_statistics(m9.reml)
@@ -156,8 +159,24 @@ report_model(m9.reml)
 report_text(m9.reml)
 report_table(m9.reml)
 
-library("insight")
 t <- report_table(m9.reml)
 display(t)
 
 model_info(m9.reml)
+
+# Extract information from the model
+summary(m9.reml) # summary of the model
+VarCorr(m9.reml) # summary of random effects
+coef(m9.reml) # coefficients for each subject
+coef(summary(m9.reml))
+coef(m9.reml)$Subject_ID
+ranef(m9.reml) # random effects for each subject: random slop, random intercept
+ranef(m9.reml)$Subject_ID
+
+coef_df <- as.data.frame(coef(m9.reml)$Subject_ID)
+write.csv(coef_df, '/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/temp.csv', row.names=TRUE, quote=FALSE)
+coef_sum_df <- as.data.frame(coef(summary(m9.reml)))
+write.csv(coef_sum_df, '/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/temp_1.csv', row.names=TRUE, quote=FALSE)
+ranef_df <- as.data.frame(ranef(m9.reml)$Subject_ID)
+write.csv(ranef_df, '/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/temp_2.csv', row.names=TRUE, quote=FALSE)
+

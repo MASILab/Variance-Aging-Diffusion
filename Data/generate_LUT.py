@@ -24,4 +24,4 @@ with open('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/
 d = {"id": list_df_id,
      "ROI": list_df_ROI}
 df_save = pd.DataFrame(data=d)
-df_save.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/LUT_customize/BrainColorLUT.csv', index=False)
+df_save.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/LUT_customize/BrainColor_LUT.csv', index=False)

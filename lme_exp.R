@@ -12,9 +12,9 @@ motion_stats <- read_csv("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-
 
 ################### DATA PREPARATION ###################
 # SELECT WHICH TO ANALYZE
-s_atlas = 'EveType1'
-s_region_id = '140'
-s_measure = 'FA_std'
+s_atlas = 'BrainColor'
+s_region_id = '207'
+s_measure = 'MD_std'
 
 # Create DataFrame based on motion_stats
 df <- motion_stats[c("Subject_ID","Session","DTI_ID","Sex","Age","Motion")]
@@ -98,12 +98,24 @@ df <- within(df, {
 })
 
 ## Backward regression
+
+m <- lmer(MD_std ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 | Subject_ID), data=df, REML=TRUE)
+s <- step(m,reduce.fixed=TRUE, reduce.random=FALSE)
+m_final <- get_model(s)
+summary(m_final)
+
 # Start with full model and do backward regression
-#m <- lmer(FA_std ~ Age_base + Interval + Interval_sqr + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
-m <- lmer(FA_std ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
-s <- step(m)
-final <- get_model(s)
-summary(final)
+m.wslope <-  lmer(FA_std ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 + Interval | Subject_ID), data = df, REML=TRUE)
+m.woslope <- lmer(FA_std ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 | Subject_ID), data = df, REML=TRUE)
+
+s.wslope <- step(m.wslope)
+s.woslope <- step(m.woslope)
+
+final.wslope <- get_model(s.wslope)
+final.woslope <- get_model(s.woslope)
+
+summary(final.wslope)
+summary(final.woslope)
 
 # Manually
 # Manual selection by Likelihood ratio test
@@ -172,6 +184,8 @@ coef(summary(m9.reml))
 coef(m9.reml)$Subject_ID
 ranef(m9.reml) # random effects for each subject: random slop, random intercept
 ranef(m9.reml)$Subject_ID
+ranef(summary(m9.reml))
+
 
 coef_df <- as.data.frame(coef(m9.reml)$Subject_ID)
 write.csv(coef_df, '/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/temp.csv', row.names=TRUE, quote=FALSE)

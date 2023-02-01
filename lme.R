@@ -23,6 +23,8 @@ for (s_atlas in list_atlas) {
     for (diff_type in list_diff_type) {
       for (value_type in list_value_type) {
         ######################### Main code starts here #######################
+        print(sprintf("%s  %s  %s  %s", s_atlas,idx_region,diff_type,value_type))
+        
         s_region_id = as.character(LUT$id[idx_region])
         s_measure <- paste(diff_type, value_type, sep='_') # eg, FA_std
         

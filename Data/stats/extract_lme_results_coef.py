@@ -65,7 +65,11 @@ for atlas in list_atlas:
             index_df = []
             for stat in list_stats_name:
                 for fix in list_fixed_effects:
-                    index_df.append("{0}_{1}".format(stat,fix))
+                    if stat == 'Estimate':
+                        pre = "beta"
+                    elif stat == 'Pr(>|t|)':
+                        pre = "p-value"
+                    index_df.append("{0}:{1}".format(pre,fix))
             
             fn_save = path_output / "{0}-{1}_{2}_coef_all.csv".format(atlas, diff_type, value_type)
             

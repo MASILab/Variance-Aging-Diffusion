@@ -22,7 +22,7 @@ x = np.random.normal(loc=100, scale=30, size=num_total)
 noise = np.zeros_like(x)
 for i in range(num_total):
     noise[i] = np.random.normal(loc=0,scale=x[i])
-y = 1 * x + noise
+y = noise
 
 # Loop
 sample_size = 50
@@ -34,8 +34,8 @@ for i in range(60):
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(7,7))
 
-    ax.scatter(x, y, c='b', s=1, alpha=0.2)
-    ax.scatter(x_s, y_s, c='r',s=3)
+    ax.scatter(x, y, c='b', s=1, alpha=0.2, label='Unobserved Data')
+    ax.scatter(x_s, y_s, c='r',s=3, label='Observed Data')
     ax.set_title('Observed Data and Ordinary Least Square (OLS) Regression')
     ax.set_ylabel('y')
     ax.set_xlabel('x')
@@ -72,4 +72,4 @@ for i in range(60):
     fig.clf()
     
 # Save the figures as a GIF using imageio
-imageio.mimsave('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/CI_tutorial/animation.gif', figs_data, format='gif', fps=1)
+imageio.mimsave('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/CI_tutorial/CI_negative_hetero_v1.gif', figs_data, format='gif', fps=1)

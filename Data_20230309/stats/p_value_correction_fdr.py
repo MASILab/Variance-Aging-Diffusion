@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Iterate through the dataframes for heatmap
 path_coef_heatmap_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_20230309/stats/coef_heatmap')
-list_csv = [fn for fn in path_coef_heatmap_folder.iterdir()]
+list_csv = [fn for fn in path_coef_heatmap_folder.iterdir() if fn.name.endswith('_coef_all.csv')]
 
 for fn in list_csv:
 

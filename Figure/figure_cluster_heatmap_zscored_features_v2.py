@@ -3,14 +3,12 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from pathlib import Path
-import pdb
 from matplotlib.colors import LogNorm
-import math
 import scipy.spatial as sp, scipy.cluster.hierarchy as hc
 
 
 # Output location
-path_out_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/clustermap/')
+path_out_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/clustermap_v2/')
 
 # Load the dataframe
 path_coef_heatmap_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/stats/coef_heatmap')

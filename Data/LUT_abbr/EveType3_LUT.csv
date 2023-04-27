@@ -1,0 +1,119 @@
+id,ROI,ROI_rename,ROI_abbr
+1,SUPERIOR_PARIETAL__WM_left,Left Superior Parietal WM,L. Sup. Parietal WM
+2,CAUDATE_NUCLEUS_left,Left Caudate Nucleus,L. Caudate Nucleus
+3,SUPERIOR_FRONTAL_WM_left,Left Superior Frontal WM,L. Sup. Front. WM
+4,MIDDLE_FRONTAL__WM_left,Left Middle Frontal WM,L. Mid. Front. WM
+5,INFERIOR_FRONTAL__WM_left,Left Inferior Frontal WM,L. Inf. Front. WM
+6,PRECENTRAL__WM_left,Left Precentral WM,L. Precentral WM
+7,POSTCENTRAL__WM_left,Left Postcentral WM,L. Postcent. WM
+8,ANGULAR__WM_left,Left Angular WM,L. Angular WM
+9,PRE-CUNEUS__WM_left,Left Precuneus WM,L. Precuneus WM
+10,CUNEUS_WM_left,Left Cuneus WM,L. Cuneus WM
+11,LINGUAL_WM_left,Left Lingual WM,L. Lingual WM
+12,FUSIFORM_WM_left,Left Fusiform WM,L. Fusiform WM
+13,CAUDATE_NUCLEUS_right,Right Caudate Nucleus,R. Caudate Nucleus
+14,SUPERIOR_OCCIPITAL_WM_left,Left Superior Occipital WM,L. Sup. Occipital WM
+15,INFERIOR_OCCIPITAL_WM_left,Left Inferior Occipital WM,L. Inf. Occipital WM
+16,MIDDLE_OCCIPITAL_WM_left,Left Middle Occipital WMW,L. Mid. Occipital WMW
+17,ENTORHINAL_AREA_left,Left Entorhinal Area,L. Entorhinal Area
+18,SUPERIOR_TEMPORAL__WM_left,Left Superior Temporal WM,L. Sup. Temp. WM
+19,INFERIOR_TEMPORAL__WM_left,Left Inferior Temporal WM,L. Inf. Temp. WM
+20,MIDDLE_TEMPORAL__WM_left,Left Middle Temporal WM,L. Mid. Temp. WM
+21,LATERAL_FRONTO-ORBITAL__WM_left,Left Lateral Fronto-orbital WM,L. Lat. Forb. WM
+22,MIDDLE_FRONTO-ORBITAL__WM_left,Left Middle Fronto-orbital WM,L. Mid. Forb. WM
+23,SUPRAMARGINAL__WM_left,Left Supramarginal WM,L. Supramarginal WM
+24,RECTUS__WM_left,Left Rectus WM,L. Rectus WM
+25,AMYGDALA,Amygdala,Amygdala
+26,HIPPOCAMPUS,Hippocampus,Hippocampus
+27,PUTAMEN_left,Left Putamen,L. Putamen
+28,Corticospinal_tract_left,Left Corticospinal Tract,L. Corticospinal Tract
+29,Inferior_cerebellar_peduncle_left,Left Inferior Cerebellar Peduncle,L. Inf. Cerebellar Peduncle
+30,Medial_lemniscus_left,Left Medial Medial Lemniscus,L. Med. Med. Lemniscus
+31,Superior_cerebellar_peduncle_left,Left Superior Cerebellar Peduncle,L. Sup. Cerebellar Peduncle
+32,Cerebral_peduncle_left,Left Cerebral Peduncle,L. Cerebral Peduncle
+33,Anterior_limb_of_internal_capsule_left,Left Anterior Limb of Internal Capsule,L. Ant. Limb  Int. Capsule
+34,Posterior_limb_of_internal_capsule_left,Left Posterior Limb of Internal Capsule,L. Post. Limb  Int. Capsule
+35,Posterior_thalamic_radiation_left,Left Posterior Thalamic Radiation,L. Post. Thalamic Radiation
+36,Anterior_corona_radiata_left,Left Anterior Corona Radiata,L. Ant. Corona Radiata
+37,Superior_corona_radiata_left,Left Superior Corona Radiata,L. Sup. Corona Radiata
+38,Posterior_corona_radiata_left,Left Posterior Corona Radiata,L. Post. Corona Radiata
+39,Cingulum_(cingulate_gyrus)_left,Left Cingulum (Cingulate Gyrus),L. Cing. (Cingulate Gyrus)
+40,Cingulum_(hippocampus)_left,Left Cingulum (Hippocampus),L. Cing. (Hippocampus)
+41,Fornix(cres)_Stria_terminalisleft,Left Fornix(cres) Stria Terminalis,L. Fornix(cres) ST
+42,Superior_longitudinal_fasciculus_left,Left Superior Longitudinal Fasciculus,L. Sup. Long. Fasciculus
+43,Superior_fronto-occipital_fasciculus_left,Left Superior Fronto-occipital Fasciculus,L. Sup. Focc. Fasciculus
+44,Inferior_fronto-occipital_fasciculus_left,Left Inferior Fronto-occipital Fasciculus,L. Inf. Focc. Fasciculus
+45,Sagittal_stratum__left,Left Sagittal Stratum,L. Sagittal Stratum
+46,External_capsule_left,Left External Capsule,L. External Capsule
+47,Uncinate_fasciculus_left,Left Uncinate Fasciculus,L. Uncinate Fasciculus
+48,Pontine_crossing_tract__left,Left Pontine Crossing Tract,L. Pontine Crossing Tract
+49,Middle_cerebellar_peduncle_left,Left Middle Cerebellar Peduncle,L. Mid. Cerebellar Peduncle
+50,Fornix_(column_and_body)_left,Left Fornix (Column&Body),L. Fornix (Column&Body)
+51,Genu_of_corpus_callosum_left,Left Genu of Corpus Callosum,L. Genu  CC
+52,Body_of_corpus_callosum_left,Left Body of Corpus Callosum,L. Body  CC
+53,Splenium_of_corpus_callosum_left,Left Splenium of Corpus Callosum,L. Splenium  CC
+54,Retrolenticular_part_of_internal_capsule_left,Left Retrolenticular Part of Internal Capsule,L. Rl. Pt.  Int. Capsule
+55,PUTAMEN_right,Right Putamen,R. Putamen
+56,Tapatum_left,Left Tapatum,L. Tapatum
+57,GLOBUS_PALLIDUS_left,Left Globus Pallidus,L. Globus Pallidus
+58,GLOBUS_PALLIDUS_right,Right Globus Pallidus,R. Globus Pallidus
+59,THALAMUS_left,Left Thalamus,L. Thalamus
+60,THALAMUS_right,Right Thalamus,R. Thalamus
+61,MIDBRAIN_left,Left Midbrain,L. Midbrain
+62,PONS_left,Left Pons,L. Pons
+63,MEDULLA_left,Left Medulla,L. Medulla
+64,SUPERIOR_PARIETAL_WM_right,Right Superior Parietal WM,R. Sup. Parietal WM
+65,SUPERIOR_FRONTAL__WM_right,Right Superior Frontal WM,R. Sup. Front. WM
+66,MIDDLE_FRONTAL_WM_right,Right Middle Frontal WM,R. Mid. Front. WM
+67,INFERIOR_FRONTAL_WM_right,Right Inferior Frontal WM,R. Inf. Front. WM
+68,PRECENTRAL_WM_right,Right Precentral WM,R. Precentral WM
+69,POSTCENTRAL_WM_right,Right Postcentral WM,R. Postcent. WM
+70,ANGULAR_WM_right,Right Angular WM,R. Angular WM
+71,PRE-CUNEUS_WM_right,Right Precuneus WM,R. Precuneus WM
+72,CUNEUS_WM_right,Right Cuneus WM,R. Cuneus WM
+73,LINGUAL_WM_right,Right Lingual WM,R. Lingual WM
+74,FUSIFORM_WM_right,Right Fusiform WM,R. Fusiform WM
+75,SUPERIOR_OCCIPITAL_WM_right,Right Superior Occipital WM,R. Sup. Occipital WM
+76,INFERIOR_OCCIPITAL_WM_right,Right Inferior Occipital WM,R. Inf. Occipital WM
+77,MIDDLE_OCCIPITAL_WM_right,Right Middle Occipital WM,R. Mid. Occipital WM
+78,ENTORHINAL_AREA_right,Right Entorhinal Area,R. Entorhinal Area
+79,SUPERIOR_TEMPORAL_WM_right,Right Superior Temporal WM,R. Sup. Temp. WM
+80,INFERIOR_TEMPORAL_WM_right,Right Inferior Temporal WM,R. Inf. Temp. WM
+81,MIDDLE_TEMPORAL_WM_right,Right Middle Temporal WM,R. Mid. Temp. WM
+82,LATERAL_FRONTO-ORBITAL_WM_right,Right Lateral Fronto-orbital WM,R. Lat. Forb. WM
+83,MIDDLE_FRONTO-ORBITAL_WM_right,Right Middle Fronto-orbital WM,R. Mid. Forb. WM
+84,SUPRAMARGINAL_WM_right,Right Supramarginal WM,R. Supramarginal WM
+85,RECTUS_WM_right,Right Rectus WM,R. Rectus WM
+86,AMYGDALA_right,Right Amygdala,R. Amygdala
+87,HIPPOCAMPUS_right,Right Hippocampus,R. Hippocampus
+88,Corticospinal_tract_right,Right Corticospinal Tract,R. Corticospinal Tract
+89,Inferior_cerebellar_peduncle_right,Right Inferior Cerebellar Peduncle,R. Inf. Cerebellar Peduncle
+90,Medial_lemniscus_right,Right Medial Lemniscus,R. Med. Lemniscus
+91,Superior_cerebellar_peduncle_right,Right Superior Cerebellar Peduncle,R. Sup. Cerebellar Peduncle
+92,Cerebral_peduncle_right,Right Cerebral Peduncle,R. Cerebral Peduncle
+93,Anterior_limb_of_internal_capsule_right,Right Anterior Limb of Internal Capsule,R. Ant. Limb  Int. Capsule
+94,Posterior_limb_of_internal_capsule_right,Right Posterior Limb of Internal Capsule,R. Post. Limb  Int. Capsule
+95,Posterior_thalamic_radiation_right,Right Posterior Thalamic Radiation,R. Post. Thalamic Radiation
+96,Anterior_corona_radiata_right,Right Anterior Corona Radiata,R. Ant. Corona Radiata
+97,Superior_corona_radiata_right,Right Superior Corona Radiata,R. Sup. Corona Radiata
+98,Posterior_corona_radiata_right,Right Posterior Corona Radiata,R. Post. Corona Radiata
+99,Cingulum_(cingulate_gyrus)_right,Right Cingulum (Cingulate Gyrus),R. Cing. (Cingulate Gyrus)
+100,Cingulum_(hippocampus)_right,Right Cingulum (Hippocampus),R. Cing. (Hippocampus)
+101,Fornix(cres)_Stria_terminalis__right,Right Fornix(cres) Stria Terminalis,R. Fornix(cres) ST
+102,Superior_longitudinal_fasciculus_right,Right Superior Longitudinal Fasciculus,R. Sup. Long. Fasciculus
+103,Superior_fronto-occipital_fasciculus__right,Right Superior Fronto-occipital Fasciculus,R. Sup. Focc. Fasciculus
+104,Inferior_fronto-occipital_fasciculus_right,Right Inferior Fronto-occipital Fasciculus,R. Inf. Focc. Fasciculus
+105,Sagittal_stratum_right,Right Sagittal Stratum,R. Sagittal Stratum
+106,External_capsule_right,Right External Capsule,R. External Capsule
+107,Uncinate_fasciculus_right,Right Uncinate Fasciculus,R. Uncinate Fasciculus
+108,Pontine_crossing_tract_(a_part_of_MCP)_right,Right Pontine Crossing Tract (a Part of MCP),R. Pontine Crossing Tract
+109,Middle_cerebellar_peduncle_right,Right Middle Cerebellar Peduncle,R. Mid. Cerebellar Peduncle
+110,Fornix_(column_and_body)_right,Right Fornix (Column&Body),R. Fornix (Column&Body)
+111,Genu_of_corpus_callosum_right,Right Genu of Corpus Callosum,R. Genu  CC
+112,Body_of_corpus_callosum_right,Right Body of Corpus Callosum,R. Body  CC
+113,Splenium_of_corpus_callosum_right,Right Splenium of Corpus Callosum,R. Splenium  CC
+114,Retrolenticular_part_of_internal_capsule_right,Right Retrolenticular Part of Internal Capsule,R. Rl. Pt.  Int. Capsule
+115,Tapatum_right,Right Tapatum,R. Tapatum
+116,MIDBRAIN_right,Right Midbrain,R. Midbrain
+117,PONS_right,Right Pons,R. Pons
+118,MEDULLA_right,Right Medulla,R. Medulla

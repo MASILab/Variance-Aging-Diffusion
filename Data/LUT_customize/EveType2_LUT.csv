@@ -1,131 +1,131 @@
-id,ROI
-1,SUPERIOR_PARIETAL_LOBULE_left
-2,CINGULATE_GYRUS_left
-3,SUPERIOR_FRONTAL_GYRUS_left
-4,MIDDLE_FRONTAL_GYRUS_left
-5,INFERIOR_FRONTAL_GYRUS_left
-6,PRECENTRAL_GYRUS_left
-7,POSTCENTRAL_GYRUS_left
-8,ANGULAR_GYRUS_left
-9,PRE-CUNEUS_left
-10,CUNEUS_left
-11,LINGUAL_GYRUS_left
-12,FUSIFORM_GYRUS_left
-13,PARAHIPPOCAMPAL_GYRUS_left
-14,SUPERIOR_OCCIPITAL_GYRUS_left
-15,INFERIOR_OCCIPITAL_GYRUS
-16,MIDDLE_OCCIPITAL_GYRUS
-17,ENTORHINAL_AREA
-18,SUPERIOR_TEMPORAL_GYRUS
-19,INFERIOR_TEMPORAL_GYRUS
-20,MIDDLE_TEMPORAL_GYRUS
-21,LATERAL_FRONTO-ORBITAL_GYRUS
-22,MIDDLE_FRONTO-ORBITAL_GYRUS
-23,SUPRAMARGINAL_GYRUS
-24,GYRUS_RECTUS
-25,INSULAR
-26,AMYGDALA
-27,HIPPOCAMPUS
-28,CEREBELLUM
-29,Corticospinal_tract_left
-30,Inferior_cerebellar_peduncle_left
-31,Medial_lemniscus_left
-32,Superior_cerebellar_peduncle_left
-33,Cerebral_peduncle_left
-34,Anterior_limb_of_internal_capsule_left
-35,Posterior_limb_of_internal_capsule_left
-36,Posterior_thalamic_radiation_left
-37,Anterior_corona_radiata_left
-38,Superior_corona_radiata_left
-39,Posterior_corona_radiata_left
-40,Cingulum_(cingulate_gyrus)_left
-41,Cingulum_(hippocampus)_left
-42,Fornix(cres)_Stria_terminalis_left
-43,Superior_longitudinal_fasciculus_left
-44,Superior_fronto-occipital_fasciculus_left
-45,Inferior_fronto-occipital_fasciculus_left
-46,Sagittal_stratum_left
-47,External_capsule_left
-48,Uncinate_fasciculus_left
-49,Pontine_crossing_tract_left
-50,Middle_cerebellar_peduncle_left
-51,Fornix_(column_and_body)_left
-52,Genu_of_corpus_callosum_left
-53,Body_of_corpus_callosum_left
-54,Splenium_of_corpus_callosum_left
-55,Retrolenticular_part_of_internal_capsule_left
-56,Red_Nucleus_left
-57,Substancia_Nigra_left
-58,Tapatum_left
-59,CAUDATE_NUCLEUS_left
-60,PUTAMEN_left
-61,THALAMUS_left
-62,GLOBUS_PALLIDUS_left
-63,MIDBRAIN_left
-64,PONS_left
-65,MEDULLA_left
-66,SUPERIOR_PARIETAL_LOBULE_right
-67,CINGULATE_GYRUS_right
-68,SUPERIOR_FRONTAL_GYRUS_right
-69,MIDDLE_FRONTAL_GYRUS_right
-70,INFERIOR_FRONTAL_GYRUS_right
-71,PRECENTRAL_GYRUS_right
-72,POSTCENTRAL_GYRUS_right
-73,ANGULAR_GYRUS_right
-74,PRE-CUNEUS_right
-75,CUNEUS_right
-76,LINGUAL_GYRUS_right
-77,FUSIFORM_GYRUS_right
-78,PARAHIPPOCAMPAL_GYRUS_right
-79,SUPERIOR_OCCIPITAL_GYRUS_right
-80,INFERIOR_OCCIPITAL_GYRUS_right
-81,MIDDLE_OCCIPITAL_GYRUS_right
-82,ENTORHINAL_AREA_right
-83,SUPERIOR_TEMPORAL_GYRUS_right
-84,INFERIOR_TEMPORAL_GYRUS_right
-85,MIDDLE_TEMPORAL_GYRUS_right
-86,LATERAL_FRONTO-ORBITAL_GYRUS_right
-87,MIDDLE_FRONTO-ORBITAL_GYRUS_right
-88,SUPRAMARGINAL_GYRUS_right
-89,GYRUS_RECTUS_right
-90,INSULAR_right
-91,AMYGDALA_right
-92,HIPPOCAMPUS_right
-93,CEREBELLUM_right
-94,Corticospinal_tract_right
-95,Inferior_cerebellar_peduncle_right
-96,Medial_lemniscus_right
-97,Superior_cerebellar_peduncle_right
-98,Cerebral_peduncle_right
-99,Anterior_limb_of_internal_capsule_right
-100,Posterior_limb_of_internal_capsule_right
-101,Posterior_thalamic_radiation_(include_optic_radiation)_right
-102,Anterior_corona_radiata_right
-103,Superior_corona_radiata_right
-104,Posterior_corona_radiata_right
-105,Cingulum_(cingulate_gyrus)_right
-106,Cingulum_(hippocampus)_right
-107,Fornix(cres)_Stria_terminalis_right
-108,Superior_longitudinal_fasciculus_right
-109,Superior_fronto-occipital_fasciculus_right
-110,Inferior_fronto-occipital_fasciculus_right
-111,Sagittal_stratum_right
-112,External_capsule_right
-113,Uncinate_fasciculus_right
-114,Pontine_crossing_tract_right
-115,Middle_cerebellar_peduncle_right
-116,Fornix_(column_and_body)_right
-117,Genu_of_corpus_callosum_right
-118,Body_of_corpus_callosum_right
-119,Splenium_of_corpus_callosum_right
-120,Retrolenticular_part_of_internal_capsule_right
-121,Red_Nucleus_right
-122,Substancia_Nigra_right
-123,Tapatum_right
-124,CAUDATE_NUCLEUS_right
-125,PUTAMEN_right
-126,THALAMUS_right
-127,GLOBUS_PALLIDUS_right
-128,MIDBRAIN_right
-129,PONS_right
-130,MEDULLA_right
+id,ROI,ROI_rename
+1,SUPERIOR_PARIETAL_LOBULE_left,Left Superior Parietal Lobule
+2,CINGULATE_GYRUS_left,Left Cingulate Gyrus
+3,SUPERIOR_FRONTAL_GYRUS_left,Left Superior Frontal Gyrus
+4,MIDDLE_FRONTAL_GYRUS_left,Left Middle Frontal Gyrus
+5,INFERIOR_FRONTAL_GYRUS_left,Left Inferior Frontal Gyrus
+6,PRECENTRAL_GYRUS_left,Left Precentral Gyrus
+7,POSTCENTRAL_GYRUS_left,Left Postcentral Gyrus
+8,ANGULAR_GYRUS_left,Left Angular Gyrus
+9,PRE-CUNEUS_left,Left Precuneus
+10,CUNEUS_left,Left Cuneus
+11,LINGUAL_GYRUS_left,Left Lingual Gyrus
+12,FUSIFORM_GYRUS_left,Left Fusiform Gyrus
+13,PARAHIPPOCAMPAL_GYRUS_left,Left Parahippocampal Gyrus
+14,SUPERIOR_OCCIPITAL_GYRUS_left,Left Superior Occipital Gyrus
+15,INFERIOR_OCCIPITAL_GYRUS,Inferior Occipital Gyrus
+16,MIDDLE_OCCIPITAL_GYRUS,Middle Occipital Gyrus
+17,ENTORHINAL_AREA,Entorhinal Area
+18,SUPERIOR_TEMPORAL_GYRUS,Superior Temporal Gyrus
+19,INFERIOR_TEMPORAL_GYRUS,Inferior Temporal Gyrus
+20,MIDDLE_TEMPORAL_GYRUS,Middle Temporal Gyrus
+21,LATERAL_FRONTO-ORBITAL_GYRUS,Lateral Fronto-orbital Gyrus
+22,MIDDLE_FRONTO-ORBITAL_GYRUS,Middle Fronto-orbital Gyrus
+23,SUPRAMARGINAL_GYRUS,Supramarginal Gyrus
+24,GYRUS_RECTUS,Gyrus Rectus
+25,INSULAR,Insular
+26,AMYGDALA,Amygdala
+27,HIPPOCAMPUS,Hippocampus
+28,CEREBELLUM,Cerebellum
+29,Corticospinal_tract_left,Left Corticospinal Tract
+30,Inferior_cerebellar_peduncle_left,Left Inferior Cerebellar Peduncle
+31,Medial_lemniscus_left,Left Medial Medial Lemniscus
+32,Superior_cerebellar_peduncle_left,Left Superior Cerebellar Peduncle
+33,Cerebral_peduncle_left,Left Cerebral Peduncle
+34,Anterior_limb_of_internal_capsule_left,Left Anterior Limb of Internal Capsule
+35,Posterior_limb_of_internal_capsule_left,Left Posterior Limb of Internal Capsule
+36,Posterior_thalamic_radiation_left,Left Posterior Thalamic Radiation
+37,Anterior_corona_radiata_left,Left Anterior Corona Radiata
+38,Superior_corona_radiata_left,Left Superior Corona Radiata
+39,Posterior_corona_radiata_left,Left Posterior Corona Radiata
+40,Cingulum_(cingulate_gyrus)_left,Left Cingulum (Cingulate Gyrus)
+41,Cingulum_(hippocampus)_left,Left Cingulum (Hippocampus)
+42,Fornix(cres)_Stria_terminalis_left,Left Fornix(cres) Stria Terminalis
+43,Superior_longitudinal_fasciculus_left,Left Superior Longitudinal Fasciculus
+44,Superior_fronto-occipital_fasciculus_left,Left Superior Fronto-occipital Fasciculus
+45,Inferior_fronto-occipital_fasciculus_left,Left Inferior Fronto-occipital Fasciculus
+46,Sagittal_stratum_left,Left Sagittal Stratum
+47,External_capsule_left,Left External Capsule
+48,Uncinate_fasciculus_left,Left Uncinate Fasciculus
+49,Pontine_crossing_tract_left,Left Pontine Crossing Tract
+50,Middle_cerebellar_peduncle_left,Left Middle Cerebellar Peduncle
+51,Fornix_(column_and_body)_left,Left Fornix (Column&Body)
+52,Genu_of_corpus_callosum_left,Left Genu of Corpus Callosum
+53,Body_of_corpus_callosum_left,Left Body of Corpus Callosum
+54,Splenium_of_corpus_callosum_left,Left Splenium of Corpus Callosum
+55,Retrolenticular_part_of_internal_capsule_left,Left Retrolenticular Part of Internal Capsule
+56,Red_Nucleus_left,Left Red Nucleus
+57,Substancia_Nigra_left,Left Substancia Nigra
+58,Tapatum_left,Left Tapatum
+59,CAUDATE_NUCLEUS_left,Left Caudate Nucleus
+60,PUTAMEN_left,Left Putamen
+61,THALAMUS_left,Left Thalamus
+62,GLOBUS_PALLIDUS_left,Left Globus Pallidus
+63,MIDBRAIN_left,Left Midbrain
+64,PONS_left,Left Pons
+65,MEDULLA_left,Left Medulla
+66,SUPERIOR_PARIETAL_LOBULE_right,Right Superior Parietal Lobule
+67,CINGULATE_GYRUS_right,Right Cingulate Gyrus
+68,SUPERIOR_FRONTAL_GYRUS_right,Right Superior Frontal Gyrus
+69,MIDDLE_FRONTAL_GYRUS_right,Right Middle Frontal Gyrus
+70,INFERIOR_FRONTAL_GYRUS_right,Right Inferior Frontal Gyrus
+71,PRECENTRAL_GYRUS_right,Right Precentral Gyrus
+72,POSTCENTRAL_GYRUS_right,Right Postcentral Gyrus
+73,ANGULAR_GYRUS_right,Right Angular Gyrus
+74,PRE-CUNEUS_right,Right Precuneus
+75,CUNEUS_right,Right Cuneus
+76,LINGUAL_GYRUS_right,Right Lingual Gyrus
+77,FUSIFORM_GYRUS_right,Right Fusiform Gyrus
+78,PARAHIPPOCAMPAL_GYRUS_right,Right Parahippocampal Gyrus
+79,SUPERIOR_OCCIPITAL_GYRUS_right,Right Superior Occipital Gyrus
+80,INFERIOR_OCCIPITAL_GYRUS_right,Right Inferior Occipital Gyrus
+81,MIDDLE_OCCIPITAL_GYRUS_right,Right Middle Occipital Gyrus
+82,ENTORHINAL_AREA_right,Right Entorhinal Area
+83,SUPERIOR_TEMPORAL_GYRUS_right,Right Superior Temporal Gyrus
+84,INFERIOR_TEMPORAL_GYRUS_right,Right Inferior Temporal Gyrus
+85,MIDDLE_TEMPORAL_GYRUS_right,Right Middle Temporal Gyrus
+86,LATERAL_FRONTO-ORBITAL_GYRUS_right,Right Lateral Fronto-orbital Gyrus
+87,MIDDLE_FRONTO-ORBITAL_GYRUS_right,Right Middle Fronto-orbital Gyrus
+88,SUPRAMARGINAL_GYRUS_right,Right Supramarginal Gyrus
+89,GYRUS_RECTUS_right,Right Gyrus Rectus
+90,INSULAR_right,Right Insular
+91,AMYGDALA_right,Right Amygdala
+92,HIPPOCAMPUS_right,Right Hippocampus
+93,CEREBELLUM_right,Right Cerebellum
+94,Corticospinal_tract_right,Right Corticospinal Tract
+95,Inferior_cerebellar_peduncle_right,Right Inferior Cerebellar Peduncle
+96,Medial_lemniscus_right,Right Medial Lemniscus
+97,Superior_cerebellar_peduncle_right,Right Superior Cerebellar Peduncle
+98,Cerebral_peduncle_right,Right Cerebral Peduncle
+99,Anterior_limb_of_internal_capsule_right,Right Anterior Limb of Internal Capsule
+100,Posterior_limb_of_internal_capsule_right,Right Posterior Limb of Internal Capsule
+101,Posterior_thalamic_radiation_(include_optic_radiation)_right,Right Posterior Thalamic Radiation (Include Optic Radiation)
+102,Anterior_corona_radiata_right,Right Anterior Corona Radiata
+103,Superior_corona_radiata_right,Right Superior Corona Radiata
+104,Posterior_corona_radiata_right,Right Posterior Corona Radiata
+105,Cingulum_(cingulate_gyrus)_right,Right Cingulum (Cingulate Gyrus)
+106,Cingulum_(hippocampus)_right,Right Cingulum (Hippocampus)
+107,Fornix(cres)_Stria_terminalis_right,Right Fornix(cres) Stria Terminalis
+108,Superior_longitudinal_fasciculus_right,Right Superior Longitudinal Fasciculus
+109,Superior_fronto-occipital_fasciculus_right,Right Superior Fronto-occipital Fasciculus
+110,Inferior_fronto-occipital_fasciculus_right,Right Inferior Fronto-occipital Fasciculus
+111,Sagittal_stratum_right,Right Sagittal Stratum
+112,External_capsule_right,Right External Capsule
+113,Uncinate_fasciculus_right,Right Uncinate Fasciculus
+114,Pontine_crossing_tract_right,Right Pontine Crossing Tract
+115,Middle_cerebellar_peduncle_right,Right Middle Cerebellar Peduncle
+116,Fornix_(column_and_body)_right,Right Fornix (Column&Body)
+117,Genu_of_corpus_callosum_right,Right Genu of Corpus Callosum
+118,Body_of_corpus_callosum_right,Right Body of Corpus Callosum
+119,Splenium_of_corpus_callosum_right,Right Splenium of Corpus Callosum
+120,Retrolenticular_part_of_internal_capsule_right,Right Retrolenticular Part of Internal Capsule
+121,Red_Nucleus_right,Right Red Nucleus
+122,Substancia_Nigra_right,Right Substancia Nigra
+123,Tapatum_right,Right Tapatum
+124,CAUDATE_NUCLEUS_right,Right Caudate Nucleus
+125,PUTAMEN_right,Right Putamen
+126,THALAMUS_right,Right Thalamus
+127,GLOBUS_PALLIDUS_right,Right Globus Pallidus
+128,MIDBRAIN_right,Right Midbrain
+129,PONS_right,Right Pons
+130,MEDULLA_right,Right Medulla

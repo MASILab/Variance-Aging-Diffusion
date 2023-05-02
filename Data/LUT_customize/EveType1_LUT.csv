@@ -13,20 +13,20 @@ id,ROI,ROI_rename
 12,FUSIFORM_GYRUS_left,Left Fusiform Gyrus
 13,PARAHIPPOCAMPAL_GYRUS_left,Left Parahippocampal Gyrus
 14,SUPERIOR_OCCIPITAL_GYRUS_left,Left Superior Occipital Gyrus
-15,INFERIOR_OCCIPITAL_GYRUS,Inferior Occipital Gyrus
-16,MIDDLE_OCCIPITAL_GYRUS,Middle Occipital Gyrus
-17,ENTORHINAL_AREA,Entorhinal Area
-18,SUPERIOR_TEMPORAL_GYRUS,Superior Temporal Gyrus
-19,INFERIOR_TEMPORAL_GYRUS,Inferior Temporal Gyrus
-20,MIDDLE_TEMPORAL_GYRUS,Middle Temporal Gyrus
-21,LATERAL_FRONTO-ORBITAL_GYRUS,Lateral Fronto-orbital Gyrus
-22,MIDDLE_FRONTO-ORBITAL_GYRUS,Middle Fronto-orbital Gyrus
-23,SUPRAMARGINAL_GYRUS,Supramarginal Gyrus
-24,GYRUS_RECTUS,Gyrus Rectus
-25,INSULAR,Insular
-26,AMYGDALA,Amygdala
-27,HIPPOCAMPUS,Hippocampus
-28,CEREBELLUM,Cerebellum
+15,INFERIOR_OCCIPITAL_GYRUS,Left Inferior Occipital Gyrus
+16,MIDDLE_OCCIPITAL_GYRUS,Left Middle Occipital Gyrus
+17,ENTORHINAL_AREA,Left Entorhinal Area
+18,SUPERIOR_TEMPORAL_GYRUS,Left Superior Temporal Gyrus
+19,INFERIOR_TEMPORAL_GYRUS,Left Inferior Temporal Gyrus
+20,MIDDLE_TEMPORAL_GYRUS,Left Middle Temporal Gyrus
+21,LATERAL_FRONTO-ORBITAL_GYRUS,Left Lateral Fronto-orbital Gyrus
+22,MIDDLE_FRONTO-ORBITAL_GYRUS,Left Middle Fronto-orbital Gyrus
+23,SUPRAMARGINAL_GYRUS,Left Supramarginal Gyrus
+24,GYRUS_RECTUS,Left Gyrus Rectus
+25,INSULAR,Left Insular
+26,AMYGDALA,Left Amygdala
+27,HIPPOCAMPUS,Left Hippocampus
+28,CEREBELLUM,Left Cerebellum
 29,Corticospinal_tract_left,Left Corticospinal Tract
 30,Inferior_cerebellar_peduncle_left,Left Inferior Cerebellar Peduncle
 31,Medial_lemniscus_left,Left Medial Medial Lemniscus

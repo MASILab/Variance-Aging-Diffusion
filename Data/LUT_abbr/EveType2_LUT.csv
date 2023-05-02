@@ -13,20 +13,20 @@ id,ROI,ROI_rename,ROI_abbr
 12,FUSIFORM_GYRUS_left,Left Fusiform Gyrus,L. Fusiform Gyrus
 13,PARAHIPPOCAMPAL_GYRUS_left,Left Parahippocampal Gyrus,L. Parahippocampal Gyrus
 14,SUPERIOR_OCCIPITAL_GYRUS_left,Left Superior Occipital Gyrus,L. Sup. Occipital Gyrus
-15,INFERIOR_OCCIPITAL_GYRUS,Inferior Occipital Gyrus,Inf. Occipital Gyrus
-16,MIDDLE_OCCIPITAL_GYRUS,Middle Occipital Gyrus,Mid. Occipital Gyrus
-17,ENTORHINAL_AREA,Entorhinal Area,Entorhinal Area
-18,SUPERIOR_TEMPORAL_GYRUS,Superior Temporal Gyrus,Sup. Temp. Gyrus
-19,INFERIOR_TEMPORAL_GYRUS,Inferior Temporal Gyrus,Inf. Temp. Gyrus
-20,MIDDLE_TEMPORAL_GYRUS,Middle Temporal Gyrus,Mid. Temp. Gyrus
-21,LATERAL_FRONTO-ORBITAL_GYRUS,Lateral Fronto-orbital Gyrus,Lat. Forb. Gyrus
-22,MIDDLE_FRONTO-ORBITAL_GYRUS,Middle Fronto-orbital Gyrus,Mid. Forb. Gyrus
-23,SUPRAMARGINAL_GYRUS,Supramarginal Gyrus,Supramarginal Gyrus
-24,GYRUS_RECTUS,Gyrus Rectus,Gyrus Rectus
-25,INSULAR,Insular,Insular
-26,AMYGDALA,Amygdala,Amygdala
-27,HIPPOCAMPUS,Hippocampus,Hippocampus
-28,CEREBELLUM,Cerebellum,Cerebellum
+15,INFERIOR_OCCIPITAL_GYRUS,Left Inferior Occipital Gyrus,L. Inf. Occipital Gyrus
+16,MIDDLE_OCCIPITAL_GYRUS,Left Middle Occipital Gyrus,L. Mid. Occipital Gyrus
+17,ENTORHINAL_AREA,Left Entorhinal Area,L. Entorhinal Area
+18,SUPERIOR_TEMPORAL_GYRUS,Left Superior Temporal Gyrus,L. Sup. Temp. Gyrus
+19,INFERIOR_TEMPORAL_GYRUS,Left Inferior Temporal Gyrus,L. Inf. Temp. Gyrus
+20,MIDDLE_TEMPORAL_GYRUS,Left Middle Temporal Gyrus,L. Mid. Temp. Gyrus
+21,LATERAL_FRONTO-ORBITAL_GYRUS,Left Lateral Fronto-orbital Gyrus,L. Lat. Forb. Gyrus
+22,MIDDLE_FRONTO-ORBITAL_GYRUS,Left Middle Fronto-orbital Gyrus,L. Mid. Forb. Gyrus
+23,SUPRAMARGINAL_GYRUS,Left Supramarginal Gyrus,L. Supramarginal Gyrus
+24,GYRUS_RECTUS,Left Gyrus Rectus,L. Gyrus Rectus
+25,INSULAR,Left Insular,L. Insular
+26,AMYGDALA,Left Amygdala,L. Amygdala
+27,HIPPOCAMPUS,Left Hippocampus,L. Hippocampus
+28,CEREBELLUM,Left Cerebellum,L. Cerebellum
 29,Corticospinal_tract_left,Left Corticospinal Tract,L. Corticospinal Tract
 30,Inferior_cerebellar_peduncle_left,Left Inferior Cerebellar Peduncle,L. Inf. Cerebellar Peduncle
 31,Medial_lemniscus_left,Left Medial Medial Lemniscus,L. Med. Med. Lemniscus

@@ -23,8 +23,8 @@ id,ROI,ROI_rename,ROI_abbr
 22,MIDDLE_FRONTO-ORBITAL__WM_left,Left Middle Fronto-orbital WM,L. Mid. Forb. WM
 23,SUPRAMARGINAL__WM_left,Left Supramarginal WM,L. Supramarginal WM
 24,RECTUS__WM_left,Left Rectus WM,L. Rectus WM
-25,AMYGDALA,Amygdala,Amygdala
-26,HIPPOCAMPUS,Hippocampus,Hippocampus
+25,AMYGDALA,Left Amygdala,L. Amygdala
+26,HIPPOCAMPUS,Left Hippocampus,L. Hippocampus
 27,PUTAMEN_left,Left Putamen,L. Putamen
 28,Corticospinal_tract_left,Left Corticospinal Tract,L. Corticospinal Tract
 29,Inferior_cerebellar_peduncle_left,Left Inferior Cerebellar Peduncle,L. Inf. Cerebellar Peduncle

@@ -145,7 +145,7 @@ for input_csv in tqdm(list_input_csv, total=len(list_input_csv)):
     random_indices = random.sample(range(len(list_male_motion)), num_samples_to_plot)
     for i in random_indices:
         x = list_male_motion[i]
-        y = list_male_y[i] - list_male_y[i][0]
+        y = list_male_y[i] - list_male_y[i][0]  #TODO: this adjustment does not make sense.
         
         ax.plot(x, y, color='tab:blue', alpha=0.3, linestyle='-', linewidth=1, zorder=2*i+1)
         ax.scatter(x, y, color='tab:blue', alpha=0.5, s=2, marker='.', zorder=2*i+1)
@@ -153,7 +153,7 @@ for input_csv in tqdm(list_input_csv, total=len(list_input_csv)):
     random_indices = random.sample(range(len(list_female_motion)), num_samples_to_plot)
     for i in random_indices:
         x = list_female_motion[i]
-        y = list_female_y[i] - list_female_y[i][0]
+        y = list_female_y[i] - list_female_y[i][0]  #TODO: this adjustment does not make sense.
         
         ax.plot(x, y, color='tab:red', alpha=0.3, linestyle='-', linewidth=1, zorder=2*i)
         ax.scatter(x, y, color='tab:red', alpha=0.5, s=2, marker='.', zorder=2*i)

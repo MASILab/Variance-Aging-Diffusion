@@ -83,7 +83,7 @@ id,ROI,ROI_rename,ROI_abbr
 82,INFERIOR_TEMPORAL_WM_left,Left Inferior Temporal WM,L. Inf. Temp. WM
 83,MIDDLE_TEMPORAL_WM_left,Left Middle Temporal WM,L. Mid. Temp. WM
 84,LATERAL_FRONTO-ORBITAL_WM_left,Left Lateral Fronto-orbital WM,L. Lat. Forb. WM
-85,MIDDLE_FRONTO-ORBITAL_WM_left,Left Middle Fronto-orbital,L. Mid. Forb.
+85,MIDDLE_FRONTO-ORBITAL_WM_left,Left Middle Fronto-orbital WM,L. Mid. Forb. WM
 86,SUPRAMARGINAL_WM_left,Left Supramarginal WM,L. Supramarginal WM
 87,RECTUS_WM_left,Left Rectus WM,L. Rectus WM
 88,CEREBELLUM_WM_left,Left Cerebellum WM,L. Cerebellum WM

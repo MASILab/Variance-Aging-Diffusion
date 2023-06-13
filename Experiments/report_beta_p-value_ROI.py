@@ -47,6 +47,7 @@ report = report.sort_values(by=['ROI_clean', 'ROI_clean_l', 'ROI'])
 
 # Remove the 'Region_clean' column as it's no longer needed
 report = report.drop('ROI_clean', axis=1)
+report = report.drop('ROI_clean_l', axis=1)
 
 print(report)
 

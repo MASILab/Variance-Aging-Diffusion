@@ -39,10 +39,11 @@ d = {'ROI':list_df_roi_rename,
 report = pd.DataFrame(data=d)
 
 # Remove "Left " and "Right " prefixes to create a 'clean' column
-report['ROI_clean'] = report['ROI'].str.replace('Left ', '').str.replace('Right ', '')
+report['ROI_clean'] = report['ROI'].str.replace('Left ', '').str.replace('Right ', '').str.replace('Inferior ', '').str.replace('Lateral ', '').str.replace('Middle ', '').str.replace('Superior ', '')
+report['ROI_clean_l'] = report['ROI'].str.replace('Left ', '').str.replace('Right ', '')
 
 # Sort first by 'Region_clean' and then by 'Region'
-report = report.sort_values(by=['ROI_clean', 'ROI'])
+report = report.sort_values(by=['ROI_clean', 'ROI_clean_l', 'ROI'])
 
 # Remove the 'Region_clean' column as it's no longer needed
 report = report.drop('ROI_clean', axis=1)
@@ -50,3 +51,4 @@ report = report.drop('ROI_clean', axis=1)
 print(report)
 
 report.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/report_beta_p-value_ROI.csv', index=False)
+report.to_excel('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/report_beta_p-value_ROI.xlsx', index=False)

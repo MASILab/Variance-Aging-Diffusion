@@ -78,7 +78,7 @@ id,ROI,ROI_rename
 77,FUSIFORM_WM_left,Left Fusiform WM
 78,SUPERIOR_OCCIPITAL_WM_left,Left Superior Occipital WM
 79,INFERIOR_OCCIPITAL_WM_left,Left Inferior Occipital WM
-80,MIDDLE_OCCIPITAL_WM_left,Left Middle Occipital WMW
+80,MIDDLE_OCCIPITAL_WM_left,Left Middle Occipital WM
 81,SUPERIOR_TEMPORAL_WM_left,Left Superior Temporal WM
 82,INFERIOR_TEMPORAL_WM_left,Left Inferior Temporal WM
 83,MIDDLE_TEMPORAL_WM_left,Left Middle Temporal WM

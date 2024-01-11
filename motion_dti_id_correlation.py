@@ -35,3 +35,7 @@ tss = np.var(df['Motion_correct_all'].values)
 r_squared = 1 - rss/tss
 
 print('R2: ', r_squared)
+print('Motion (first) average: {} mm'.format(motion_mean_1))
+print('Motion (rescan) average: {} mm'.format(motion_mean_2))
+print('Motion increase: {} mm'.format(motion_mean_2 - motion_mean_1))
+print('Motion increase: {} %'.format((motion_mean_2 - motion_mean_1)/motion_mean_1*100))

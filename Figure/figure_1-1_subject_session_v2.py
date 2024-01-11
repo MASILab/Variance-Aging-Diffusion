@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 # figure_size = (3.75, 3.4)
 figure_size = (3.75, 3.5)
-dpi = 600
-fontsize=9
-fontdict={'fontsize':9}
+dpi = 750
+fontsize=7
+fontdict={'fontsize':7}
 figure_save = '/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/figs/figure_1-1_subject_session_v2.png'
 
 # Dataframe with session and age information

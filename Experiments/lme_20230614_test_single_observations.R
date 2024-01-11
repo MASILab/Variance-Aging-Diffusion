@@ -1,12 +1,18 @@
+# Run the same analysis, but with the 19 subjects (who have only 1 DTI image) removed.
+# To see if the outputs change at all.
+# Author: Chenyu Gao
+# Date: Jun 14, 2023
+
 library(tidyverse)
 library(lme4)
 library(lmerTest)
 library(readr)
 library(ggplot2)
+library(optimx)
 
 # Load data
 brain_stats <- read_csv("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/BLSA_Brain_stats_concat_20221110_delivery.csv")
-motion_stats <- read_csv("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/BLSA_eddy_movement_rms_average_20221109.csv")
+motion_stats <- read_csv("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/BLSA_eddy_movement_rms_average_20221109_w_scanner_id.csv")
 
 # list of regions/measurements/values
 list_atlas <- c('EveType1','EveType2','EveType3','BrainColor')
@@ -29,12 +35,16 @@ for (s_atlas in list_atlas) {
         s_measure <- paste(diff_type, value_type, sep='_') # eg, FA_std
         
         # Data preparation
-        df <- motion_stats[c("Subject_ID", "Session", "DTI_ID", "Sex", "Age", "Motion")]
+        df <- motion_stats[c("Subject_ID", "Session", "Scanner_ID", "DTI_ID", "Sex", "Age", "Motion")]
         
         # Drop the NA rows where Age info is missing
         df <- df[!is.na(df$Age), ]
         
-        # New column: selected measure
+        # New: Drop rows of subjects who have only one DTI scan
+        subject_counts <- table(df$Subject_ID) # Count the frequency of each subject
+        df <- df[df$Subject_ID %in% names(subject_counts[subject_counts > 1]), ] # Keep only the subjects that appear more than once
+        
+        # New column: selected measure, e.g., "FA_std"
         df[s_measure] = NA
         
         for (col in names(brain_stats)){
@@ -98,42 +108,48 @@ for (s_atlas in list_atlas) {
         # New column: Interval, time since first visit
         df['Interval'] <- df['Age'] - df['Age_base']
         
+        # Change the unit of ages to decade
+        df['Interval'] <- df['Interval']/10
+        df['Age'] <- df['Age']/10
+        df['Age_base'] <- df['Age_base']/10
+        
         # Re-order and save
-        df <- df[c("Subject_ID", "Sex", "Session", "DTI_ID", "Age", "Age_base", "Interval", "Motion", s_measure)]
-        fn_save = sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/part/%s-%s-%s.csv", s_atlas, s_region_id, s_measure)
+        df <- df[c("Subject_ID", "Sex", "Session","Scanner_ID", "DTI_ID", "Age", "Age_base", "Interval", "Motion", s_measure)]
+        fn_save = sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/lme_data_20230614_test/part/%s-%s-%s.csv", s_atlas, s_region_id, s_measure)
         write.csv(df, fn_save, row.names=FALSE, quote=FALSE)
         
         # LINEAR MIXED-EFFECTS MODEL
-        # Subject_ID, DTI_ID, Sex: convert numeric to factor
+        # Subject_ID, Scanner_ID, DTI_ID, Sex: convert numeric to factor
         df <- within(df, {
           Subject_ID <- factor(Subject_ID)
+          Scanner_ID <- factor(Scanner_ID)
           DTI_ID <- factor(DTI_ID)
           Sex <- factor(Sex)
         })
         
         # Backward regression
-        formula_full_model <- sprintf("%s ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 | Subject_ID)", s_measure)
-        m <- lmer(formula_full_model, data = df, REML = TRUE)
-        s <- step(m,reduce.fixed=TRUE, reduce.random=FALSE)
+        formula_full_model <- sprintf("%s ~ Age_base + Interval + Motion + Sex + DTI_ID + (1 | Subject_ID) + (1 | Scanner_ID)", s_measure)
+        m <- lmer(formula_full_model, data = df, REML = TRUE, control = lmerControl(optimizer = "nloptwrap", optCtrl=list(maxfun=1e6)))
+        s <- step(m, reduce.fixed=TRUE, reduce.random=FALSE)
         m_final <- get_model(s)
         
         # Save results
         coef_df <- as.data.frame(coef(m_final)$Subject_ID)
-        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/stats/coef_ind/%s-%s-%s_coef.csv", s_atlas, s_region_id, s_measure)
+        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/lme_data_20230614_test/stats/coef_ind/%s-%s-%s_coef.csv", s_atlas, s_region_id, s_measure)
         write.csv(coef_df, fn_save, row.names=TRUE, quote=FALSE)
         
         coef_sum_df <- as.data.frame(coef(summary(m_final)))
-        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/stats/coef_sum/%s-%s-%s_coef_summary.csv", s_atlas, s_region_id, s_measure)
+        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/lme_data_20230614_test/stats/coef_sum/%s-%s-%s_coef_summary.csv", s_atlas, s_region_id, s_measure)
         write.csv(coef_sum_df, fn_save, row.names=TRUE, quote=FALSE)
         
         ranef_df <- as.data.frame(ranef(m_final)$Subject_ID)
-        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/stats/ranef_ind/%s-%s-%s_ranef.csv", s_atlas, s_region_id, s_measure)
+        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/lme_data_20230614_test/stats/ranef_ind/%s-%s-%s_ranef.csv", s_atlas, s_region_id, s_measure)
         write.csv(ranef_df, fn_save, row.names=TRUE, quote=FALSE)
         
         ranef_sum_df <- as.data.frame(VarCorr(m_final))
         ranef_sum_df <- ranef_sum_df[c('grp','vcov','sdcor')]
         colnames(ranef_sum_df) <- c("Groups","Variance","std")
-        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_zscore_feature_20230208/stats/ranef_sum/%s-%s-%s_ranef_summary.csv", s_atlas, s_region_id, s_measure)
+        fn_save <- sprintf("/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Experiments/lme_data_20230614_test/stats/ranef_sum/%s-%s-%s_ranef_summary.csv", s_atlas, s_region_id, s_measure)
         write.csv(ranef_sum_df, fn_save, row.names=TRUE, quote=FALSE)
         
         ######################### Main code ends here #######################
@@ -141,5 +157,4 @@ for (s_atlas in list_atlas) {
     }
   } 
 }
-
 

@@ -64,4 +64,13 @@ for i in range(max_total):
                               counts_female[i],
                               counts_male[i]))
 
+# Check if every subject has at least 2 scans
+print("Following subjects have only 1 DTI scan:")
+num = 0
+for subject in df['Subject_ID'].unique():
+    if len(df.loc[df['Subject_ID']==subject,]) ==1:
+        num += 1
+        print(subject)
+print("total: {}".format(num))
+
 # df.to_csv('./temp.csv', index=False)

@@ -17,7 +17,7 @@ df = pd.read_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusio
 
 seed = -1
 num_save = 0
-while num_save <= 100:
+while num_save <= 200:
     seed += 1
     # Sample 3 sessions, with increasing age and motion
     row_1 = df.loc[df['Age']<=40].sample(random_state=seed)
@@ -145,3 +145,4 @@ while num_save <= 100:
     fig.subplots_adjust(wspace=0.01, hspace=0.01)
 
     fig.savefig('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/noisy_scalar_maps/save/hot/seed_{0}.png'.format(seed), dpi = 300, bbox_inches="tight")
+    plt.close('all')

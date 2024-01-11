@@ -3,7 +3,7 @@ from pptx.util import Inches
 from pathlib import Path
 
 
-path_cm_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/clustermap/')
+path_cm_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/clustermap_v2')
 path_cm_beta = path_cm_folder / 'beta'
 
 prs = Presentation()

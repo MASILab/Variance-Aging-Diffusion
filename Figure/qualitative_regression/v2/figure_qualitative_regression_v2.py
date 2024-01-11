@@ -72,6 +72,7 @@ df = pd.DataFrame(data=d)
 print('Complete!\nStart looping through DTI scalars and pick representative examples...')
 
 for dti_scalar in df['dti_scalar'].unique():
+    print('Start drawing exmaples for {}'.format(dti_scalar))
     df_selected = df.loc[df['dti_scalar']==dti_scalar].sort_values('std_err')
     num_rows = len(df_selected.index)
 
@@ -81,7 +82,7 @@ for dti_scalar in df['dti_scalar'].unique():
                              + list(range(num_rows-num_examples_per_class, num_rows))
     
     # Make figure for each example
-    for i in list_representative_rows:
+    for i in tqdm(list_representative_rows, total=len(list_representative_rows)):
         row = df_selected.iloc[[i]]
 
         # retrieve info from the row
@@ -152,6 +153,6 @@ for dti_scalar in df['dti_scalar'].unique():
         ax.set_ylabel(r'$σ - σ_{0}$ (z-score)',fontdict=fontdict)
         ax.set_xticks(ticks=[0,0.4,0.8,1.2])
         
-        fn_figure = path_figure_output / dti_scalar / "{:03d}_{}_{}_{}_vs_interval_slope:{:.3f}_stderr:{:.3f}.png".format(i, atlas, roi_id, dvariable, slope, stderr)
+        fn_figure = path_figure_output / dti_scalar / "{:03d}_{}_{}_{}_vs_interval_slope_{:.3f}_stderr_{:.3f}.png".format(i, atlas, roi_id, dvariable, slope, stderr)
         fig.savefig(fn_figure, dpi=dpi, bbox_inches='tight')
         plt.close()

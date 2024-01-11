@@ -47,36 +47,70 @@ for csv in heatmap_stats_folder.iterdir():
             list_roi_name_rename.append(row['ROI_rename'])
             list_roi_name_abbr.append(row['ROI_abbr'])
 
-            list_age_base_beta.append(heatmap.loc['beta:Age_base', row['ROI']])
-            list_age_base_p.append(heatmap.loc['p-value:Age_base', row['ROI']])
+            # Age_base
+            beta = heatmap.loc['beta:Age_base', row['ROI']]
+            pvalue = heatmap.loc['p-value:Age_base', row['ROI']]
+            if beta != beta:
+                list_age_base_beta.append(None)
+                list_age_base_p.append(None)
+            else:
+                list_age_base_beta.append(beta)
+                list_age_base_p.append(pvalue)
 
-            list_interval_beta.append(heatmap.loc['beta:Interval', row['ROI']])
-            list_interval_p.append(heatmap.loc['p-value:Interval', row['ROI']])
+            # Age_interval
+            beta = heatmap.loc['beta:Interval', row['ROI']]
+            pvalue = heatmap.loc['p-value:Interval', row['ROI']]
+            if beta != beta:
+                list_interval_beta.append(None)
+                list_interval_p.append(None)
+            else:
+                list_interval_beta.append(beta)
+                list_interval_p.append(pvalue)
             
-            list_motion_beta.append(heatmap.loc['beta:Motion', row['ROI']])
-            list_motion_p.append(heatmap.loc['p-value:Motion', row['ROI']])
+            # Motion
+            beta = heatmap.loc['beta:Motion', row['ROI']]
+            pvalue = heatmap.loc['p-value:Motion', row['ROI']]
+            if beta != beta:
+                list_motion_beta.append(None)
+                list_motion_p.append(None)
+            else:
+                list_motion_beta.append(beta)
+                list_motion_p.append(pvalue)
             
-            list_sex_beta.append(heatmap.loc['beta:Sex1', row['ROI']])
-            list_sex_p.append(heatmap.loc['p-value:Sex1', row['ROI']])
-            
-            list_rescan_beta.append(heatmap.loc['beta:DTI_ID2', row['ROI']])
-            list_rescan_p.append(heatmap.loc['p-value:DTI_ID2', row['ROI']])
-
+            # Sex
+            beta = heatmap.loc['beta:Sex1', row['ROI']]
+            pvalue = heatmap.loc['p-value:Sex1', row['ROI']]
+            if beta != beta:    
+                list_sex_beta.append(None)
+                list_sex_p.append(None)
+            else:
+                list_sex_beta.append(beta)
+                list_sex_p.append(pvalue)
+                
+            # Rescan
+            beta = heatmap.loc['beta:DTI_ID2', row['ROI']]
+            pvalue = heatmap.loc['p-value:DTI_ID2', row['ROI']]
+            if beta != beta:
+                list_rescan_beta.append(None)
+                list_rescan_p.append(None)
+            else:    
+                list_rescan_beta.append(beta)
+                list_rescan_p.append(pvalue)
 
         d = {'ROI_original':list_roi_name_original,
              'ROI_rename':list_roi_name_rename,
              'ROI_abbr':list_roi_name_abbr,
-             'beta:Age_base':list_age_base_beta,
-             'p:Age_base':list_age_base_p,
-             'beta:Age_interval':list_interval_beta,
-             'p:Age_interval':list_interval_p,
-             'beta:Motion':list_motion_beta,
-             'p:Motion':list_motion_p,
-             'beta:Sex':list_sex_beta,
-             'p:Sex':list_sex_p,
-             'beta:Rescan':list_rescan_beta,
-             'p:Rescan':list_rescan_p}
+             'coefficient:Age_base':list_age_base_beta,
+             'pvalue:Age_base':list_age_base_p,
+             'coefficient:Age_interval':list_interval_beta,
+             'pvalue:Age_interval':list_interval_p,
+             'coefficient:Motion':list_motion_beta,
+             'pvalue:Motion':list_motion_p,
+             'coefficient:Sex':list_sex_beta,
+             'pvalue:Sex':list_sex_p,
+             'coefficient:Rescan':list_rescan_beta,
+             'pvalue:Rescan':list_rescan_p}
         
         df = pd.DataFrame(data=d)
-        output = output_dir / csv.name.replace('_std_coef_all_pval_adjusted.csv', '.csv')
+        output = output_dir / ('lme_stats_' + csv.name.replace('_std_coef_all_pval_adjusted.csv', '.csv'))
         df.to_csv(output, index=False)

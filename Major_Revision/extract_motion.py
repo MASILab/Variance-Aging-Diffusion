@@ -20,7 +20,7 @@ def extract_eddy_motion_from_prequal(path_prequal):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data.csv')
+    df = pd.read_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data_site.csv')
     df['prequal_folder_updated'] = None
     df['motion'] = None
 
@@ -47,4 +47,4 @@ if __name__ == '__main__':
         df.at[idx, 'prequal_folder_updated'] = str(path_prequal)
         df.at[idx, 'motion'] = motion
         
-    df.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data_motion.csv', index=False)
+    df.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data_site_motion.csv', index=False)

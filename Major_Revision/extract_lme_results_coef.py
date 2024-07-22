@@ -1,24 +1,24 @@
-# Collect stats info from /coef_sum (output of lmer fitted on each atlas,region,diff) in preparation for the heatmap.
+# Collect stats info from /coef_sum (output of lmer in R) in preparation for the heatmap.
 # Author: Chenyu Gao
-# Date: Mar 27, 2023
+# Date: July 22, 2024
 
 import pandas as pd
 import numpy as np
 from pathlib import Path
 
 # list of regions/measurements/values
-list_atlas = ['EveType1','EveType2','EveType3','BrainColor']
-list_diff_type = ['RD', 'AD', 'FA', 'MD']
+list_atlas = ['EveType1']
+list_diff_type = ['FA']
 list_value_type = ['std']
 
 # Stats info to extract
-list_fixed_effects =  ['Age_base','Interval','Motion','Sex1','DTI_ID2']
+list_fixed_effects =  ['Age_base','Interval','motion','sexmale']
 list_stats_name = ['Estimate','Pr(>|t|)'] # beta and p-value
 
 # Path of the lookup table, lmer results, output
 path_LUT_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data/LUT_customize/')
-path_coef_sum_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_20230309/stats/coef_sum')
-path_output = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_20230309/stats/coef_heatmap')
+path_coef_sum_folder = Path('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/stats/coef_sum')
+path_output = Path('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/stats/coef_heatmap')
 
 
 for atlas in list_atlas:

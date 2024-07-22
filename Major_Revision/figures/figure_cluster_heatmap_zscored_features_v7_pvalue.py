@@ -1,3 +1,7 @@
+# Generate clustermap for p-values.
+# Author: Chenyu Gao
+# Date: July 22, 2024
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -12,21 +16,14 @@ figuresz = (7.8, 3.3)
 dpi = 600
 fontsz = 10
 fontsz_cbar = 8
-fontsz_xticks = {'BrainColor': 8,
-                 'EveType1': 8,
-                 'EveType2': 8,
-                 'EveType3': 8}
-
-xticklabels = {'BrainColor': 2,
-                 'EveType1': 2,
-                 'EveType2': 2,
-                 'EveType3': 2}
+fontsz_xticks = {'EveType1': 8}
+xticklabels = {'EveType1': 2}
 
 # Output location
-path_out_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Figure/clustermap_v7/')
+path_out_folder = Path('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/figures/clustermap_v7/')
 
 # Load the dataframe
-path_coef_heatmap_folder = Path('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Data_20230309/stats/coef_heatmap')
+path_coef_heatmap_folder = Path('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/stats/coef_heatmap')
 list_csv = [fn for fn in path_coef_heatmap_folder.iterdir() if fn.name.endswith('_pval_adjusted.csv')]
 
 for fn in list_csv:
@@ -42,8 +39,8 @@ for fn in list_csv:
     df.rename(columns=column_mapping, inplace=True)
     
     # Split into 2 for each subplot
-    df_beta = df.iloc[[0,1,3,2,4]]
-    df_pvalue = df.iloc[[5,6,8,7,9]]
+    df_beta = df.iloc[[0,1,3,2]]
+    df_pvalue = df.iloc[[4,5,7,6]]
     
     # Calculate hierarchical cluster based on beta values
     df_beta_imp = df_beta.fillna(0)
@@ -68,7 +65,7 @@ for fn in list_csv:
                        cbar_kws={'ticks': [0, 25, 50]},
                        tree_kws={'linewidths':0},
                        xticklabels=xticklabels[atlas],
-                       yticklabels=['Baseline', 'Interval', 'Sex', 'Motion', 'Rescan']
+                       yticklabels=['Baseline', 'Interval', 'Sex', 'Motion']
                        )
     
     # Font

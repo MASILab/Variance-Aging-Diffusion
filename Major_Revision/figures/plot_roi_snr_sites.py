@@ -11,7 +11,8 @@ def raincloud_plot(idx):
     
     df = pd.read_csv('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data_site_motion_fa-std_snr.csv')
     df = df.loc[df['dataset']=='BLSA', ['site', f'EveType1-{idx}-SNR']].copy()
-    df['site'] = df['site'].str.replace('blsa_', '').astype(int).astype(str)
+    scanner_rename = {"blsa_10": "A", "blsa_07": "B", "blsa_09": "C", "blsa_08": "D"}
+    df['site'] = df['site'].map(scanner_rename)
     
     fig, ax = plt.subplots(1, 1, figsize=(2, 2), tight_layout=True)
     ax = sns.violinplot(
@@ -46,13 +47,14 @@ def raincloud_plot(idx):
         )
 
     ax.tick_params(labelsize=9, which='both')
-    ax.set_xlabel('scanner ID', fontsize=9)
+    ax.set_xlabel('scanner', fontsize=9)
     ax.set_ylabel('signal-to-noise ratio', fontsize=9)
     ax.set_title(f"{roi_name_abbr}", fontsize=9)
 
     save_png = f'/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/figures/roi_snr_v1/each_roi/{idx}_{roi_name}.png'
     fig.savefig(save_png, dpi=300)
     print(f"Saved {save_png}")
+    plt.close('all')
 
 
 if __name__ == '__main__':
@@ -62,3 +64,14 @@ if __name__ == '__main__':
     with Pool(processes=6) as pool:
         for _ in pool.imap(raincloud_plot, list_idx):
             pass
+    
+    # provide ranking of ROIs based on std for reference
+    df = pd.read_csv('/home-nfs2/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/data/data_site_motion_fa-std_snr.csv')
+    rank_data = {'id': [], 'ROI': [], 'std_average': []}
+    for idx in list_idx:
+        rank_data['id'].append(idx)
+        rank_data['ROI'].append(lut.loc[lut['id']==idx, 'ROI_rename'].values[0])
+        rank_data['std_average'].append(df[f'EveType1-{idx}-FA_std'].mean())
+    rank_df = pd.DataFrame(rank_data)
+    rank_df.sort_values(by='std_average', ascending=True, inplace=True)
+    rank_df.to_csv('/home/local/VANDERBILT/gaoc11/Projects/Variance-Aging-Diffusion/Major_Revision/figures/roi_snr_v1/roi_ranking.csv', index=False)
